@@ -1,113 +1,165 @@
+/* eslint-disable react/no-unescaped-entities */
+// import CodeSection from "@/components/CodeSection";
+// import Demo from "@/components/Demo";
+
+// import YoutubePlayer from "@/components/YoutubePlayer";
+// import { redis } from "@/lib/redis";
+import Form from "@/components/Form";
+import { Icons } from "@/components/Icons";
+import { cn } from "@/lib/utils";
+import { Check, Star } from "lucide-react";
+import localFont from "next/font/local";
 import Image from "next/image";
 
-export default function Home() {
+const fontScary = localFont({
+  src: "../assets/Scary.ttf",
+});
+
+export default async function Home() {
+  // const requests = await redis.get("served-requests");
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div className="bg-blue-50 grainy-light">
+      <div className="relative overflow-hidden">
+        <div className="mx-auto max-w-7xl pb-24 pt-10 sm:grid lg:grid-cols-2 sm:pb-32 lg:gap-x-8 lg:px-8 lg:pt-32 lg:pb-52">
+          <div className="px-6 lg:px-0 lg:pt-4">
+            <div className="mx-auto max-w-lg text-center sm:text-left flex flex-col items-center lg:items-start">
+              <h1
+                className={cn(
+                  "relative tracking-tight sm:text-left mt-10 font-bold !leading-[4rem] text-gray-900 text-5xl md:text-7xl"
+                )}
+              >
+                <span className="whitespace-nowrap">
+                  Profan
+                  <span className="relative">
+                    i
+                    <span className="absolute -left-4 -right-4 translate-x-[15px] md:translate-x-[3px] md:-top-1.5">
+                      <Image
+                        alt="swaer-emoji"
+                        src="/swear-emoji.png"
+                        width={48}
+                        height={48}
+                        className="h-5 w-5 object-contain md:h-8 md:w-12"
+                      />
+                    </span>
+                  </span>
+                  ty
+                </span>
+                API
+              </h1>
+              <p className="mt-8 text-lg lg:pr-10 text-center lg:text-left text-balance md:text-wrap">
+                Detecting toxic content has always been{" "}
+                <span
+                  className={cn(
+                    "font-scary font-bold text-red-500",
+                    fontScary.className
+                  )}
+                >
+                  slow
+                </span>{" "}
+                and{" "}
+                <span
+                  className={cn(
+                    "font-scary font-bold text-red-500",
+                    fontScary.className
+                  )}
+                >
+                  expensive
+                </span>
+                . Not anymore. Introducing a fast, free and open-source
+                profanity filter for your web apps.
+              </p>
+
+              <ul className="mt-8 space-y-2 font-medium flex flex-col items-center sm:items-start">
+                <div className="space-y-2">
+                  <li className="flex gap-1.5 items-center text-left">
+                    <Check className="h-5 w-5 shrink-0 text-red-500" /> Much
+                    faster and cheaper to run than AI
+                  </li>
+                  <li className="flex gap-1.5 items-center">
+                    <Check className="h-5 w-5 shrink-0 text-red-500" /> Pretty
+                    accurate
+                  </li>
+                  <li className="flex gap-1.5 items-center">
+                    <Check className="h-5 w-5 shrink-0 text-red-500" /> 100%
+                    free & open-source
+                  </li>
+                </div>
+              </ul>
+
+              <div className="mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                <div className="flex -space-x-4">
+                  <Image
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-blue-50 dark:ring-gray-800"
+                    src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                    alt="Image Description"
+                    width={40}
+                    height={40}
+                  />
+                  <Image
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-blue-50 dark:ring-gray-800"
+                    src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                    alt="Image Description"
+                    width={40}
+                    height={40}
+                  />
+                  <Image
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-blue-50 dark:ring-gray-800"
+                    src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80"
+                    alt="Image Description"
+                    width={40}
+                    height={40}
+                  />
+                  <Image
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-blue-50 dark:ring-gray-800"
+                    src="/other-random-dude.jpg"
+                    alt="Image Description"
+                    width={40}
+                    height={40}
+                  />
+                  <Image
+                    className="inline-block object-cover h-10 w-10 rounded-full ring-2 ring-blue-50 dark:ring-gray-800"
+                    src="/random-stock-photo.jpg"
+                    alt="Image Description"
+                    width={40}
+                    height={40}
+                  />
+                </div>
+
+                <div className="flex flex-col justify-between items-center sm:items-start">
+                  {/* <div className="flex gap-0.5">
+                    <Star className="h-4 w-4 text-red-500 fill-red-500" />
+                    <Star className="h-4 w-4 text-red-500 fill-red-500" />
+                    <Star className="h-4 w-4 text-red-500 fill-red-500" />
+                    <Star className="h-4 w-4 text-red-500 fill-red-500" />
+                    <Star className="h-4 w-4 text-red-500 fill-red-500" />
+                  </div> */}
+
+                  <p className="">
+                    <span className="font-semibold">
+                      {/* {(Math.ceil(Number(requests) / 10) * 10).toLocaleString()} */}
+                      120000
+                    </span>{" "}
+                    API requests served{" "}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative px-8 sm:px-16 md:px-0 mt-28 md:mx-auto md:max-w-xl w-full lg:mx-0 lg:mt-20">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              alt="try-it"
+              aria-hidden="true"
+              src="/try-it.png"
+              height={400}
+              width={400}
+              className="absolute w-40 left-2/3 -top-2 select-none hidden sm:block"
             />
-          </a>
+            <Form />
+          </div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
